@@ -16,15 +16,15 @@ for N in range(4,8):                                     #M.A to Create populati
         model.learn(total_timesteps=10)                      #M.A to Train the agent 10 times
         model.save("walker_"+str(N)+"_"+str(Run_M))         #M.A save the trained agent to create date set
         
-#for N in range(4,8):                                     #M.A to Create population of candidates and evaluate them
- #   Run=[]
-  #  for Run_M in range(3):                               #M.A two nested for loop lead to square matrix NxM
-   #     model.Load("walker_"+str(N)+"_"+str(Run_M))         #M.A Load the trained agent to create date set 
-    #    mean_reward, variance_reward = evaluate_policy(model, model.get_env(), n_eval_episodes=10)  #M.A to Evaluate the agent
-     #   candidate = mutate(mean_params)             #M.A Load new policy parameters to agent 
-      #  Run.append({'reward':mean(N)})             #M.A to calculate an store the mean of the episodic rewards in a dictionery
-       # Run.append({'reward':variance(N)})         #M.A to calculate an store the variance of the episodic rewards in a dictionery
-    
+for N in range(4,8):                                     #M.A to Create population of candidates and evaluate them
+    Run=[]
+    for Run_M in range(3):                               #M.A two nested for loop lead to square matrix NxM
+        model.Load("walker_"+str(N)+"_"+str(Run_M))         #M.A Load the trained agent to create date set 
+        mean_reward, variance_reward = evaluate_policy(model, model.get_env(), n_eval_episodes=10)  #M.A to Evaluate the agent
+        candidate = mutate(mean_params)             #M.A Load new policy parameters to agent 
+        Run.append({'reward':mean(N)})             #M.A to calculate an store the mean of the episodic rewards in a dictionery
+        Run.append({'reward':variance(N)})         #M.A to calculate an store the variance of the episodic rewards in a dictionery
+     
     
     
     
