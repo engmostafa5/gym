@@ -27,11 +27,6 @@ for N in range(4,8):                                     #M.A to Create populati
      
     
     
-    
-    
-    
-    
-    
     #obs = env.reset()                                    #M.A The current observation of the environment
 
         #    candidate = mutate(mean_params)             #M.A Load new policy parameters to agent.
